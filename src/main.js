@@ -1,5 +1,5 @@
 // Main JavaScript functionality for e-commerce site
-import './main.css'
+// import './main.css' - removed for browser compatibility
 
 // Initialize common functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -171,7 +171,7 @@ function showCartNotification(productName) {
 	notification.className =
 		'alert alert-success alert-dismissible fade show position-fixed'
 	notification.style.cssText =
-		'top: 70px; right: 20px; z-index: 9999; min-width: 300px;'
+		'top: 20px; right: 20px; z-index: 9999; min-width: 300px;'
 	notification.innerHTML = `
         <i class="bi bi-check-circle me-2"></i>
         <strong>${productName}</strong> добавлен в корзину
@@ -326,7 +326,7 @@ function validateForm(form) {
 }
 
 // Utility functions
-export function showAlert(type, message) {
+function showAlert(type, message) {
 	const alertDiv = document.createElement('div')
 	alertDiv.className = `alert alert-${
 		type === 'error' ? 'danger' : type
@@ -365,7 +365,7 @@ function getAlertIcon(type) {
 }
 
 // Lazy loading for images
-export function initializeLazyLoading() {
+function initializeLazyLoading() {
 	const images = document.querySelectorAll('img[data-src]')
 
 	const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -385,7 +385,7 @@ export function initializeLazyLoading() {
 }
 
 // Performance monitoring
-export function trackPagePerformance() {
+function trackPagePerformance() {
 	window.addEventListener('load', () => {
 		setTimeout(() => {
 			const perfData = performance.getEntriesByType('navigation')[0]
@@ -403,3 +403,7 @@ export function trackPagePerformance() {
 
 // Initialize performance tracking
 trackPagePerformance()
+
+// Make functions available globally for other scripts
+window.showAlert = showAlert
+window.initializeLazyLoading = initializeLazyLoading
