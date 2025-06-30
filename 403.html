@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>403 - Доступ запрещен | Shop</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="src/main.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-shop"></i> Shop
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="terms.html">Пользовательское соглашение</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">
+              <i class="bi bi-cart3"></i> Корзина
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="auth.html">
+              <i class="bi bi-person"></i> Войти
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Error Page Content -->
+  <main class="error-page">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <div class="error-code text-warning">403</div>
+          <h1 class="display-4 fw-bold mb-4">Доступ запрещен</h1>
+          <p class="lead mb-5 text-muted">
+            У вас нет прав для просмотра этой страницы.
+            Возможно, требуется авторизация или ваша учетная запись не имеет необходимых разрешений.
+          </p>
+
+          <!-- Access Reasons -->
+          <div class="row justify-content-center mb-5">
+            <div class="col-md-8">
+              <div class="alert alert-warning border-0">
+                <h5 class="alert-heading">
+                  <i class="bi bi-exclamation-triangle me-2"></i>
+                  Возможные причины:
+                </h5>
+                <ul class="list-unstyled mb-0 text-start">
+                  <li class="mb-2">
+                    <i class="bi bi-person-x text-warning me-2"></i>
+                    Вы не авторизованы в системе
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-shield-lock text-warning me-2"></i>
+                    У вашего аккаунта недостаточно прав
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-clock-history text-warning me-2"></i>
+                    Ваша сессия истекла
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-ban text-warning me-2"></i>
+                    Ваш аккаунт заблокирован или приостановлен
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+            <a href="auth.html" class="btn btn-primary btn-lg">
+              <i class="bi bi-box-arrow-in-right me-2"></i>
+              Войти в аккаунт
+            </a>
+            <a href="index.html" class="btn btn-outline-primary btn-lg">
+              <i class="bi bi-house-door me-2"></i>
+              На главную
+            </a>
+            <button class="btn btn-outline-secondary btn-lg" onclick="goBack()">
+              <i class="bi bi-arrow-left me-2"></i>
+              Назад
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Access Levels -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="text-center mb-5">
+            <h3>Уровни доступа</h3>
+            <p class="text-muted">Понимание различных уровней доступа в нашем магазине</p>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center">
+                  <i class="bi bi-person display-4 text-success mb-3"></i>
+                  <h5 class="card-title">Гость</h5>
+                  <ul class="list-unstyled text-muted">
+                    <li>Просмотр каталога</li>
+                    <li>Поиск товаров</li>
+                    <li>Чтение отзывов</li>
+                    <li>Просмотр FAQ</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center">
+                  <i class="bi bi-person-check display-4 text-primary mb-3"></i>
+                  <h5 class="card-title">Пользователь</h5>
+                  <ul class="list-unstyled text-muted">
+                    <li>Все возможности гостя</li>
+                    <li>Покупка товаров</li>
+                    <li>История заказов</li>
+                    <li>Написание отзывов</li>
+                    <li>Список желаний</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center">
+                  <i class="bi bi-person-gear display-4 text-warning mb-3"></i>
+                  <h5 class="card-title">Администратор</h5>
+                  <ul class="list-unstyled text-muted">
+                    <li>Все возможности пользователя</li>
+                    <li>Управление товарами</li>
+                    <li>Обработка заказов</li>
+                    <li>Модерация отзывов</li>
+                    <li>Статистика продаж</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Support -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h3 class="mb-4">Проблемы с доступом?</h3>
+          <p class="lead mb-4">
+            Если вы считаете, что получили эту ошибку по ошибке,
+            свяжитесь с нашей службой поддержки
+          </p>
+
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 h-100">
+                <div class="card-body">
+                  <i class="bi bi-envelope display-5 text-primary mb-3"></i>
+                  <h5>Email поддержка</h5>
+                  <p class="text-muted mb-3">Ответим в течение 24 часов</p>
+                  <a href="mailto:support@shop.com" class="btn btn-outline-primary">
+                    Написать
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 h-100">
+                <div class="card-body">
+                  <i class="bi bi-telephone display-5 text-primary mb-3"></i>
+                  <h5>Телефон</h5>
+                  <p class="text-muted mb-3">Круглосуточная поддержка</p>
+                  <a href="tel:+78001234567" class="btn btn-outline-primary">
+                    Позвонить
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 h-100">
+                <div class="card-body">
+                  <i class="bi bi-chat-dots display-5 text-primary mb-3"></i>
+                  <h5>Онлайн чат</h5>
+                  <p class="text-muted mb-3">Мгновенная помощь</p>
+                  <button class="btn btn-outline-primary" onclick="openChat()">
+                    Открыть чат
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Shop</h5>
+          <p>Интернет-магазин качественных товаров</p>
+        </div>
+        <div class="col-md-6">
+          <h6>Полезные ссылки</h6>
+          <ul class="list-unstyled">
+            <li><a href="faq.html" class="text-light text-decoration-none">FAQ</a></li>
+            <li><a href="terms.html" class="text-light text-decoration-none">Пользовательское соглашение</a></li>
+            <li><a href="auth.html" class="text-light text-decoration-none">Войти в аккаунт</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p>&copy; 2024 Shop. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function goBack() {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = 'index.html';
+      }
+    }
+
+    function openChat() {
+      // In a real application, this would open a chat widget
+      alert('Функция чата будет доступна в ближайшее время. Пожалуйста, воспользуйтесь email или телефоном для связи.');
+    }
+
+    // Check if user is logged in and show appropriate message
+    document.addEventListener('DOMContentLoaded', function () {
+      const userData = localStorage.getItem('userData') || sessionStorage.getItem('userData');
+
+      if (userData) {
+        // User is logged in but still got 403
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'alert alert-info border-0 mt-3';
+        alertDiv.innerHTML = `
+                    <i class="bi bi-info-circle me-2"></i>
+                    Вы авторизованы, но у вашего аккаунта недостаточно прав для доступа к этой странице.
+                `;
+
+        const container = document.querySelector('.container .row .col-lg-8');
+        const errorCode = container.querySelector('.error-code');
+        errorCode.parentNode.insertBefore(alertDiv, errorCode.nextSibling.nextSibling);
+      }
+    });
+
+    // Log 403 error for analytics (in real app)
+    console.log('403 Error - Access denied:', window.location.href);
+  </script>
+</body>
+
+</html>

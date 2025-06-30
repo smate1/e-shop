@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Уведомления | Shop</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-shop"></i> Shop
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="terms.html">Пользовательское соглашение</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">
+              <i class="bi bi-cart3"></i> Корзина
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="auth.html">
+              <i class="bi bi-person"></i> Личный кабинет
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <section class="bg-light py-3">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Главная</a></li>
+          <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Личный кабинет</a></li>
+          <li class="breadcrumb-item active">Уведомления</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-3 mb-4">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">Личный кабинет</h5>
+            </div>
+            <div class="list-group list-group-flush">
+              <a href="#" class="list-group-item list-group-item-action">
+                <i class="bi bi-person me-2"></i> Профиль
+              </a>
+              <a href="empty-orders.html" class="list-group-item list-group-item-action">
+                <i class="bi bi-bag me-2"></i> Мои заказы
+              </a>
+              <a href="empty-returns.html" class="list-group-item list-group-item-action">
+                <i class="bi bi-arrow-return-left me-2"></i> Возвраты
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <i class="bi bi-heart me-2"></i> Избранное
+              </a>
+              <a href="#" class="list-group-item list-group-item-action active">
+                <i class="bi bi-bell me-2"></i> Уведомления
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <i class="bi bi-gear me-2"></i> Настройки
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notifications Content -->
+        <div class="col-lg-9">
+          <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h4 class="mb-0">Уведомления</h4>
+              <div class="d-flex gap-2">
+                <select class="form-select form-select-sm" style="width: auto;">
+                  <option>Все уведомления</option>
+                  <option>Заказы</option>
+                  <option>Акции</option>
+                  <option>Новости</option>
+                  <option>Системные</option>
+                </select>
+                <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal"
+                  data-bs-target="#notificationSettings">
+                  <i class="bi bi-gear"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Empty State -->
+              <div class="empty-state py-5">
+                <i class="bi bi-bell-slash text-muted"></i>
+                <h3>У вас нет уведомлений</h3>
+                <p>
+                  Здесь будут появляться важные сообщения о ваших заказах,
+                  новых акциях и обновлениях сервиса.
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                  <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#notificationSettings">
+                    <i class="bi bi-gear me-2"></i>
+                    Настроить уведомления
+                  </button>
+                  <a href="catalog.html" class="btn btn-outline-primary btn-lg">
+                    <i class="bi bi-grid me-2"></i>
+                    Перейти в каталог
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notification Types -->
+          <div class="mt-5">
+            <h4 class="mb-4">Типы уведомлений</h4>
+            <div class="row">
+              <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <i class="bi bi-bag-check display-4 text-success mb-3"></i>
+                    <h5 class="card-title">Заказы</h5>
+                    <p class="card-text text-muted small">
+                      Статус заказа, отправка, доставка
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <i class="bi bi-percent display-4 text-danger mb-3"></i>
+                    <h5 class="card-title">Акции</h5>
+                    <p class="card-text text-muted small">
+                      Скидки, распродажи, спецпредложения
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <i class="bi bi-newspaper display-4 text-primary mb-3"></i>
+                    <h5 class="card-title">Новости</h5>
+                    <p class="card-text text-muted small">
+                      Новые товары, обновления магазина
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <i class="bi bi-shield-check display-4 text-warning mb-3"></i>
+                    <h5 class="card-title">Безопасность</h5>
+                    <p class="card-text text-muted small">
+                      Вход в аккаунт, изменения профиля
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subscription Options -->
+          <div class="mt-5">
+            <div class="card border-info">
+              <div class="card-header bg-info text-white">
+                <h5 class="mb-0">
+                  <i class="bi bi-envelope me-2"></i>
+                  Способы получения уведомлений
+                </h5>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-envelope-at text-primary me-3" style="font-size: 2rem;"></i>
+                      <div>
+                        <h6 class="mb-1">Email</h6>
+                        <p class="text-muted small mb-0">
+                          Получайте уведомления на электронную почту
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-phone text-success me-3" style="font-size: 2rem;"></i>
+                      <div>
+                        <h6 class="mb-1">SMS</h6>
+                        <p class="text-muted small mb-0">
+                          Важные уведомления по SMS
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-bell text-warning me-3" style="font-size: 2rem;"></i>
+                      <div>
+                        <h6 class="mb-1">Push</h6>
+                        <p class="text-muted small mb-0">
+                          Мгновенные уведомления в браузере
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefits of Notifications -->
+          <div class="mt-5">
+            <h4 class="mb-4">Преимущества уведомлений</h4>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="d-flex align-items-start">
+                  <div class="flex-shrink-0">
+                    <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white"
+                      style="width: 48px; height: 48px;">
+                      <i class="bi bi-clock"></i>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h5>Будьте в курсе</h5>
+                    <p class="text-muted mb-0">
+                      Получайте актуальную информацию о статусе заказов
+                      и важных обновлениях в реальном времени.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="d-flex align-items-start">
+                  <div class="flex-shrink-0">
+                    <div class="bg-success rounded-circle d-flex align-items-center justify-content-center text-white"
+                      style="width: 48px; height: 48px;">
+                      <i class="bi bi-percent"></i>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h5>Не пропустите скидки</h5>
+                    <p class="text-muted mb-0">
+                      Узнавайте первыми о новых акциях, распродажах
+                      и эксклюзивных предложениях.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="d-flex align-items-start">
+                  <div class="flex-shrink-0">
+                    <div class="bg-warning rounded-circle d-flex align-items-center justify-content-center text-white"
+                      style="width: 48px; height: 48px;">
+                      <i class="bi bi-shield-check"></i>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h5>Безопасность</h5>
+                    <p class="text-muted mb-0">
+                      Получайте уведомления о входах в аккаунт
+                      и изменениях в профиле для защиты.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="d-flex align-items-start">
+                  <div class="flex-shrink-0">
+                    <div class="bg-info rounded-circle d-flex align-items-center justify-content-center text-white"
+                      style="width: 48px; height: 48px;">
+                      <i class="bi bi-star"></i>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h5>Персональные предложения</h5>
+                    <p class="text-muted mb-0">
+                      Получайте рекомендации товаров на основе
+                      ваших интересов и покупок.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Call to Action -->
+          <div class="mt-5">
+            <div class="card bg-light border-0">
+              <div class="card-body text-center">
+                <h4 class="mb-3">Настройте уведомления под себя</h4>
+                <p class="text-muted mb-4">
+                  Выберите, какие уведомления вы хотите получать и как.
+                  Вы всегда можете изменить настройки в любое время.
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#notificationSettings">
+                    <i class="bi bi-gear me-2"></i>
+                    Настроить уведомления
+                  </button>
+                  <button class="btn btn-outline-primary" onclick="requestNotificationPermission()">
+                    <i class="bi bi-bell me-2"></i>
+                    Разрешить Push-уведомления
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Notification Settings Modal -->
+  <div class="modal fade" id="notificationSettings" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Настройки уведомлений</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <h6>Типы уведомлений</h6>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="orderNotifications" checked>
+                <label class="form-check-label" for="orderNotifications">
+                  Уведомления о заказах
+                </label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="promoNotifications" checked>
+                <label class="form-check-label" for="promoNotifications">
+                  Акции и скидки
+                </label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="newsNotifications">
+                <label class="form-check-label" for="newsNotifications">
+                  Новости магазина
+                </label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="securityNotifications" checked>
+                <label class="form-check-label" for="securityNotifications">
+                  Безопасность аккаунта
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h6>Способы доставки</h6>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                <label class="form-check-label" for="emailNotifications">
+                  Email уведомления
+                </label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="smsNotifications">
+                <label class="form-check-label" for="smsNotifications">
+                  SMS уведомления
+                </label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="pushNotifications">
+                <label class="form-check-label" for="pushNotifications">
+                  Push уведомления
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-12">
+              <h6>Частота уведомлений</h6>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="radio" name="frequency" id="immediate" checked>
+                <label class="form-check-label" for="immediate">
+                  Мгновенные уведомления
+                </label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="radio" name="frequency" id="daily">
+                <label class="form-check-label" for="daily">
+                  Ежедневная сводка
+                </label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="radio" name="frequency" id="weekly">
+                <label class="form-check-label" for="weekly">
+                  Еженедельная сводка
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+          <button type="button" class="btn btn-primary" onclick="saveNotificationSettings()">
+            Сохранить настройки
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Shop</h5>
+          <p>Интернет-магазин качественных товаров</p>
+        </div>
+        <div class="col-md-6">
+          <h6>Полезные ссылки</h6>
+          <ul class="list-unstyled">
+            <li><a href="faq.html" class="text-light text-decoration-none">FAQ</a></li>
+            <li><a href="terms.html" class="text-light text-decoration-none">Пользовательское соглашение</a></li>
+            <li><a href="auth.html" class="text-light text-decoration-none">Войти в аккаунт</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p>&copy; 2024 Shop. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function requestNotificationPermission() {
+      if ('Notification' in window) {
+        Notification.requestPermission().then(function (permission) {
+          if (permission === 'granted') {
+            showAlert('success', 'Push-уведомления разрешены!');
+
+            // Show sample notification
+            setTimeout(() => {
+              new Notification('Shop', {
+                body: 'Уведомления настроены успешно!',
+                icon: 'https://via.placeholder.com/64x64?text=S'
+              });
+            }, 1000);
+          } else {
+            showAlert('warning', 'Для получения уведомлений разрешите их в настройках браузера');
+          }
+        });
+      } else {
+        showAlert('error', 'Ваш браузер не поддерживает push-уведомления');
+      }
+    }
+
+    function saveNotificationSettings() {
+      // Simulate saving settings
+      setTimeout(() => {
+        showAlert('success', 'Настройки уведомлений сохранены!');
+        bootstrap.Modal.getInstance(document.getElementById('notificationSettings')).hide();
+      }, 500);
+    }
+
+    function showAlert(type, message) {
+      const alertDiv = document.createElement('div');
+      alertDiv.className = `alert alert-${type === 'error' ? 'danger' : type} alert-dismissible fade show position-fixed`;
+      alertDiv.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+      alertDiv.innerHTML = `
+                <i class="bi bi-${type === 'success' ? 'check-circle' : type === 'warning' ? 'exclamation-triangle' : 'x-circle'} me-2"></i>
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+
+      document.body.appendChild(alertDiv);
+
+      // Auto remove after 5 seconds
+      setTimeout(() => {
+        if (alertDiv.parentNode) {
+          alertDiv.remove();
+        }
+      }, 5000);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Часто задаваемые вопросы | Shop</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="src/main.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-shop"></i> Shop
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="terms.html">Пользовательское соглашение</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">
+              <i class="bi bi-cart3"></i> Корзина
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="auth.html">
+              <i class="bi bi-person"></i> Войти
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- FAQ Search Section -->
+  <section class="faq-search">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h1 class="display-5 fw-bold mb-4">Часто задаваемые вопросы</h1>
+          <p class="lead mb-4">Найдите ответы на самые популярные вопросы о нашем сервисе</p>
+
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="input-group input-group-lg">
+                <input type="text" class="form-control" id="faqSearch" placeholder="Введите ваш вопрос...">
+                <button class="btn btn-light" type="button">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Content -->
+  <main class="py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Categories -->
+        <div class="col-lg-3 mb-4">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">Категории</h5>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-decoration-none faq-category" data-category="all">
+                    <i class="bi bi-list-ul"></i> Все вопросы
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-decoration-none faq-category" data-category="delivery">
+                    <i class="bi bi-truck"></i> Доставка
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-decoration-none faq-category" data-category="payment">
+                    <i class="bi bi-credit-card"></i> Оплата
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-decoration-none faq-category" data-category="returns">
+                    <i class="bi bi-arrow-return-left"></i> Возврат
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-decoration-none faq-category" data-category="account">
+                    <i class="bi bi-person-circle"></i> Аккаунт
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-decoration-none faq-category" data-category="products">
+                    <i class="bi bi-box"></i> Товары
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Items -->
+        <div class="col-lg-9">
+          <div id="faqContainer">
+            <!-- Delivery Questions -->
+            <div class="faq-item" data-category="delivery">
+              <button class="faq-question">
+                <span>Какие варианты доставки доступны?</span>
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Мы предлагаем несколько вариантов доставки:</p>
+                <ul>
+                  <li><strong>Курьерская доставка</strong> - доставка в течение 1-2 дней</li>
+                  <li><strong>Почта России</strong> - доставка в течение 3-7 дней</li>
+                  <li><strong>Пункты выдачи</strong> - забрать заказ в удобном пункте</li>
+                  <li><strong>Экспресс-доставка</strong> - доставка в день заказа</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="delivery">
+              <button class="faq-question">
+                <span>Сколько стоит доставка?</span>
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Стоимость доставки зависит от выбранного способа:</p>
+                <ul>
+                  <li>Курьерская доставка - от 300 рублей</li>
+                  <li>Почта России - от 200 рублей</li>
+                  <li>Пункты выдачи - от 150 рублей</li>
+                  <li>Экспресс-доставка - от 500 рублей</li>
+                </ul>
+                <p><strong>Бесплатная доставка</strong> при заказе от 3000 рублей!</p>
+              </div>
+            </div>
+
+            <!-- Payment Questions -->
+            <div class="faq-item" data-category="payment">
+              <button class="faq-question">
+                <span>Какие способы оплаты вы принимаете?</span>
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Мы принимаем следующие способы оплаты:</p>
+                <ul>
+                  <li>Банковские карты (Visa, MasterCard, МИР)</li>
+                  <li>Электронные кошельки (ЮMoney, QIWI)</li>
+                  <li>Онлайн-банкинг</li>
+                  <li>Оплата при получении (наличными или картой)</li>
+                  <li>Банковский перевод</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Returns Questions -->
+            <div class="faq-item" data-category="returns">
+              <button class="faq-question">
+                <span>Как вернуть товар?</span>
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Возврат товара осуществляется в течение 14 дней с момента получения:</p>
+                <ol>
+                  <li>Войдите в личный кабинет</li>
+                  <li>Найдите нужный заказ</li>
+                  <li>Нажмите "Вернуть товар"</li>
+                  <li>Укажите причину возврата</li>
+                  <li>Дождитесь подтверждения</li>
+                </ol>
+                <p>Товар должен быть в оригинальной упаковке и не иметь следов использования.</p>
+              </div>
+            </div>
+
+            <!-- Account Questions -->
+            <div class="faq-item" data-category="account">
+              <button class="faq-question">
+                <span>Как создать аккаунт?</span>
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Создание аккаунта займет всего несколько минут:</p>
+                <ol>
+                  <li>Нажмите "Войти" в верхнем меню</li>
+                  <li>Выберите "Регистрация"</li>
+                  <li>Заполните необходимые данные</li>
+                  <li>Подтвердите email</li>
+                  <li>Готово! Теперь вы можете делать покупки</li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Products Questions -->
+            <div class="faq-item" data-category="products">
+              <button class="faq-question">
+                <span>Как найти нужный товар?</span>
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Используйте несколько способов поиска:</p>
+                <ul>
+                  <li><strong>Поиск по названию</strong> - введите название товара в поисковую строку</li>
+                  <li><strong>Категории</strong> - выберите нужную категорию в каталоге</li>
+                  <li><strong>Фильтры</strong> - используйте фильтры по цене, бренду, характеристикам</li>
+                  <li><strong>Популярные товары</strong> - смотрите рекомендации на главной странице</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- No results message -->
+          <div id="noResults" class="empty-state" style="display: none;">
+            <i class="bi bi-search"></i>
+            <h3>Ничего не найдено</h3>
+            <p>Попробуйте изменить поисковый запрос или выберите другую категорию</p>
+            <button class="btn btn-primary" onclick="clearSearch()">Сбросить поиск</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Contact Section -->
+  <section class="bg-light py-5">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h3 class="mb-4">Не нашли ответ на свой вопрос?</h3>
+          <p class="lead mb-4">Свяжитесь с нашей службой поддержки, и мы поможем вам решить любую проблему</p>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <i class="bi bi-envelope display-6 text-primary mb-3"></i>
+              <h5>Email</h5>
+              <p>support@shop.com</p>
+            </div>
+            <div class="col-md-4 mb-3">
+              <i class="bi bi-telephone display-6 text-primary mb-3"></i>
+              <h5>Телефон</h5>
+              <p>8 (800) 123-45-67</p>
+            </div>
+            <div class="col-md-4 mb-3">
+              <i class="bi bi-chat-dots display-6 text-primary mb-3"></i>
+              <h5>Онлайн-чат</h5>
+              <p>Круглосуточно</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Shop</h5>
+          <p>Интернет-магазин качественных товаров</p>
+        </div>
+        <div class="col-md-6">
+          <h6>Полезные ссылки</h6>
+          <ul class="list-unstyled">
+            <li><a href="faq.html" class="text-light text-decoration-none">FAQ</a></li>
+            <li><a href="terms.html" class="text-light text-decoration-none">Пользовательское соглашение</a></li>
+            <li><a href="auth.html" class="text-light text-decoration-none">Войти в аккаунт</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p>&copy; 2024 Shop. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="src/faq.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Возвраты | Shop</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-shop"></i> Shop
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="terms.html">Пользовательское соглашение</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">
+              <i class="bi bi-cart3"></i> Корзина
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="auth.html">
+              <i class="bi bi-person"></i> Личный кабинет
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <section class="bg-light py-3">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Главная</a></li>
+          <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Личный кабинет</a></li>
+          <li class="breadcrumb-item active">Возвраты</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-3 mb-4">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">Личный кабинет</h5>
+            </div>
+            <div class="list-group list-group-flush">
+              <a href="#" class="list-group-item list-group-item-action">
+                <i class="bi bi-person me-2"></i> Профиль
+              </a>
+              <a href="empty-orders.html" class="list-group-item list-group-item-action">
+                <i class="bi bi-bag me-2"></i> Мои заказы
+              </a>
+              <a href="#" class="list-group-item list-group-item-action active">
+                <i class="bi bi-arrow-return-left me-2"></i> Возвраты
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <i class="bi bi-heart me-2"></i> Избранное
+              </a>
+              <a href="empty-notifications.html" class="list-group-item list-group-item-action">
+                <i class="bi bi-bell me-2"></i> Уведомления
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <i class="bi bi-gear me-2"></i> Настройки
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Returns Content -->
+        <div class="col-lg-9">
+          <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h4 class="mb-0">Возвраты и обмены</h4>
+              <div class="d-flex gap-2">
+                <select class="form-select form-select-sm" style="width: auto;">
+                  <option>Все возвраты</option>
+                  <option>В процессе</option>
+                  <option>Одобрено</option>
+                  <option>Завершено</option>
+                  <option>Отклонено</option>
+                </select>
+                <button class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-funnel"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Empty State -->
+              <div class="empty-state py-5">
+                <i class="bi bi-arrow-return-left text-muted"></i>
+                <h3>У вас нет возвратов</h3>
+                <p>
+                  Здесь будут отображаться все ваши запросы на возврат и обмен товаров.
+                  Если вам понадобится вернуть товар, мы поможем вам в этом.
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                  <a href="empty-orders.html" class="btn btn-primary btn-lg">
+                    <i class="bi bi-bag me-2"></i>
+                    Посмотреть заказы
+                  </a>
+                  <a href="catalog.html" class="btn btn-outline-primary btn-lg">
+                    <i class="bi bi-grid me-2"></i>
+                    Каталог товаров
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Return Policy Info -->
+          <div class="mt-5">
+            <div class="card border-info">
+              <div class="card-header bg-info text-white">
+                <h5 class="mb-0">
+                  <i class="bi bi-info-circle me-2"></i>
+                  Как работает возврат товаров?
+                </h5>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6>Условия возврата:</h6>
+                    <ul class="mb-4">
+                      <li>Товар можно вернуть в течение 14 дней</li>
+                      <li>Оригинальная упаковка должна быть сохранена</li>
+                      <li>Товар не должен иметь следов использования</li>
+                      <li>Необходимо наличие документов о покупке</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h6>Процесс возврата:</h6>
+                    <ol class="mb-4">
+                      <li>Создание заявки в личном кабинете</li>
+                      <li>Подтверждение от службы поддержки</li>
+                      <li>Передача товара курьеру</li>
+                      <li>Проверка товара и возврат средств</li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="alert alert-warning border-0">
+                  <i class="bi bi-exclamation-triangle me-2"></i>
+                  <strong>Внимание:</strong> Некоторые категории товаров не подлежат возврату
+                  (товары личной гигиены, продукты питания, программное обеспечение).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="mt-5">
+            <h4 class="mb-4">Быстрые действия</h4>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <i class="bi bi-question-circle display-4 text-primary mb-3"></i>
+                    <h5 class="card-title">FAQ по возвратам</h5>
+                    <p class="card-text text-muted">Ответы на часто задаваемые вопросы</p>
+                    <a href="faq.html#returns" class="btn btn-outline-primary">
+                      Перейти к FAQ
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <i class="bi bi-headset display-4 text-success mb-3"></i>
+                    <h5 class="card-title">Связаться с поддержкой</h5>
+                    <p class="card-text text-muted">Получить персональную консультацию</p>
+                    <a href="mailto:support@shop.com" class="btn btn-outline-success">
+                      Написать email
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <i class="bi bi-file-text display-4 text-warning mb-3"></i>
+                    <h5 class="card-title">Условия возврата</h5>
+                    <p class="card-text text-muted">Полная информация о правилах</p>
+                    <a href="terms.html#returns" class="btn btn-outline-warning">
+                      Читать условия
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Steps Guide -->
+          <div class="mt-5">
+            <h4 class="mb-4">Как оформить возврат?</h4>
+            <div class="row">
+              <div class="col-md-3 mb-4">
+                <div class="text-center">
+                  <div
+                    class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center text-white mb-3"
+                    style="width: 60px; height: 60px;">
+                    <span class="h4 mb-0">1</span>
+                  </div>
+                  <h5>Выберите заказ</h5>
+                  <p class="text-muted small">
+                    Перейдите в раздел "Мои заказы" и найдите нужный товар
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                <div class="text-center">
+                  <div
+                    class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center text-white mb-3"
+                    style="width: 60px; height: 60px;">
+                    <span class="h4 mb-0">2</span>
+                  </div>
+                  <h5>Заполните заявку</h5>
+                  <p class="text-muted small">
+                    Укажите причину возврата и загрузите фото при необходимости
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                <div class="text-center">
+                  <div
+                    class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center text-white mb-3"
+                    style="width: 60px; height: 60px;">
+                    <span class="h4 mb-0">3</span>
+                  </div>
+                  <h5>Дождитесь одобрения</h5>
+                  <p class="text-muted small">
+                    Мы рассмотрим заявку в течение 24 часов
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                <div class="text-center">
+                  <div
+                    class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center text-white mb-3"
+                    style="width: 60px; height: 60px;">
+                    <span class="h4 mb-0">4</span>
+                  </div>
+                  <h5>Отправьте товар</h5>
+                  <p class="text-muted small">
+                    Передайте товар курьеру или отнесите в пункт приема
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Support -->
+          <div class="mt-5">
+            <div class="card bg-light border-0">
+              <div class="card-body text-center">
+                <h4 class="mb-3">Нужна помощь с возвратом?</h4>
+                <p class="text-muted mb-4">
+                  Наша служба поддержки поможет вам разобраться с любыми вопросами
+                  по возврату и обмену товаров.
+                </p>
+                <div class="row justify-content-center">
+                  <div class="col-md-4 mb-3">
+                    <div class="d-flex align-items-center justify-content-center">
+                      <i class="bi bi-telephone text-primary me-2"></i>
+                      <div>
+                        <strong>8 (800) 123-45-67</strong><br>
+                        <small class="text-muted">Звонок бесплатный</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <div class="d-flex align-items-center justify-content-center">
+                      <i class="bi bi-envelope text-primary me-2"></i>
+                      <div>
+                        <strong>support@shop.com</strong><br>
+                        <small class="text-muted">Ответим в течение дня</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <div class="d-flex align-items-center justify-content-center">
+                      <i class="bi bi-chat-dots text-primary me-2"></i>
+                      <div>
+                        <strong>Онлайн чат</strong><br>
+                        <small class="text-muted">Работаем 24/7</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Shop</h5>
+          <p>Интернет-магазин качественных товаров</p>
+        </div>
+        <div class="col-md-6">
+          <h6>Полезные ссылки</h6>
+          <ul class="list-unstyled">
+            <li><a href="faq.html" class="text-light text-decoration-none">FAQ</a></li>
+            <li><a href="terms.html" class="text-light text-decoration-none">Пользовательское соглашение</a></li>
+            <li><a href="auth.html" class="text-light text-decoration-none">Войти в аккаунт</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p>&copy; 2024 Shop. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

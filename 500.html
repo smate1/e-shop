@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>500 - Внутренняя ошибка сервера | Shop</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-shop"></i> Shop
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="terms.html">Пользовательское соглашение</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">
+              <i class="bi bi-cart3"></i> Корзина
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="auth.html">
+              <i class="bi bi-person"></i> Войти
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Error Page Content -->
+  <main class="error-page">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <div class="error-code text-danger">500</div>
+          <h1 class="display-4 fw-bold mb-4">Внутренняя ошибка сервера</h1>
+          <p class="lead mb-5 text-muted">
+            Произошла непредвиденная ошибка на нашем сервере.
+            Мы уже знаем о проблеме и работаем над её устранением.
+          </p>
+
+          <!-- Error Details -->
+          <div class="row justify-content-center mb-5">
+            <div class="col-md-8">
+              <div class="alert alert-danger border-0">
+                <h5 class="alert-heading">
+                  <i class="bi bi-exclamation-triangle me-2"></i>
+                  Что произошло?
+                </h5>
+                <p class="mb-3">
+                  Наш сервер столкнулся с неожиданной проблемой при обработке вашего запроса.
+                  Это может быть временная проблема.
+                </p>
+                <hr>
+                <div class="row text-start">
+                  <div class="col-md-6">
+                    <small class="text-muted">
+                      <strong>Время ошибки:</strong><br>
+                      <span id="errorTime"></span>
+                    </small>
+                  </div>
+                  <div class="col-md-6">
+                    <small class="text-muted">
+                      <strong>ID ошибки:</strong><br>
+                      <span id="errorId"></span>
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+            <button class="btn btn-primary btn-lg" onclick="retryRequest()">
+              <i class="bi bi-arrow-clockwise me-2"></i>
+              Попробовать снова
+            </button>
+            <a href="index.html" class="btn btn-outline-primary btn-lg">
+              <i class="bi bi-house-door me-2"></i>
+              На главную
+            </a>
+            <button class="btn btn-outline-secondary btn-lg" onclick="reportError()">
+              <i class="bi bi-flag me-2"></i>
+              Сообщить об ошибке
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Status Information -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="text-center mb-5">
+            <h3>Статус системы</h3>
+            <p class="text-muted">Текущее состояние наших сервисов</p>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center">
+                  <div class="d-flex align-items-center justify-content-center mb-3">
+                    <div class="status-indicator bg-success rounded-circle me-2" style="width: 12px; height: 12px;">
+                    </div>
+                    <h5 class="mb-0">Веб-сайт</h5>
+                  </div>
+                  <p class="text-success mb-0">Работает</p>
+                  <small class="text-muted">Основной сайт доступен</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center">
+                  <div class="d-flex align-items-center justify-content-center mb-3">
+                    <div class="status-indicator bg-warning rounded-circle me-2" style="width: 12px; height: 12px;">
+                    </div>
+                    <h5 class="mb-0">API</h5>
+                  </div>
+                  <p class="text-warning mb-0">Проблемы</p>
+                  <small class="text-muted">Временные сбои</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center">
+                  <div class="d-flex align-items-center justify-content-center mb-3">
+                    <div class="status-indicator bg-success rounded-circle me-2" style="width: 12px; height: 12px;">
+                    </div>
+                    <h5 class="mb-0">Платежи</h5>
+                  </div>
+                  <p class="text-success mb-0">Работает</p>
+                  <small class="text-muted">Все платежные системы доступны</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Auto-refresh indicator -->
+          <div class="text-center mt-4">
+            <small class="text-muted">
+              <i class="bi bi-arrow-clockwise me-1"></i>
+              Автоматическое обновление через <span id="refreshTimer">30</span> секунд
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to do -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="text-center mb-5">
+            <h3>Что делать в такой ситуации?</h3>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="card border-0 h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-start">
+                    <div class="flex-shrink-0">
+                      <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white"
+                        style="width: 40px; height: 40px;">
+                        <span class="fw-bold">1</span>
+                      </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <h5>Подождите немного</h5>
+                      <p class="text-muted mb-0">
+                        Проблема может быть временной.
+                        Попробуйте обновить страницу через несколько минут.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="card border-0 h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-start">
+                    <div class="flex-shrink-0">
+                      <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white"
+                        style="width: 40px; height: 40px;">
+                        <span class="fw-bold">2</span>
+                      </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <h5>Очистите кэш</h5>
+                      <p class="text-muted mb-0">
+                        Попробуйте очистить кэш браузера или
+                        открыть сайт в режиме инкогнито.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="card border-0 h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-start">
+                    <div class="flex-shrink-0">
+                      <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white"
+                        style="width: 40px; height: 40px;">
+                        <span class="fw-bold">3</span>
+                      </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <h5>Проверьте соединение</h5>
+                      <p class="text-muted mb-0">
+                        Убедитесь, что ваше интернет-соединение
+                        работает стабильно.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="card border-0 h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-start">
+                    <div class="flex-shrink-0">
+                      <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white"
+                        style="width: 40px; height: 40px;">
+                        <span class="fw-bold">4</span>
+                      </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <h5>Свяжитесь с нами</h5>
+                      <p class="text-muted mb-0">
+                        Если проблема не исчезает,
+                        обратитесь в службу поддержки.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Support -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h3 class="mb-4">Нужна помощь?</h3>
+          <p class="lead mb-4">
+            Наша техническая поддержка готова помочь решить любые проблемы
+          </p>
+
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 h-100">
+                <div class="card-body">
+                  <i class="bi bi-envelope display-5 text-primary mb-3"></i>
+                  <h5>Email</h5>
+                  <p class="text-muted mb-3">tech@shop.com</p>
+                  <a href="mailto:tech@shop.com" class="btn btn-outline-primary">
+                    Написать
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 h-100">
+                <div class="card-body">
+                  <i class="bi bi-telephone display-5 text-primary mb-3"></i>
+                  <h5>Техподдержка</h5>
+                  <p class="text-muted mb-3">8 (800) 123-45-67</p>
+                  <a href="tel:+78001234567" class="btn btn-outline-primary">
+                    Позвонить
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 h-100">
+                <div class="card-body">
+                  <i class="bi bi-chat-dots display-5 text-primary mb-3"></i>
+                  <h5>Онлайн чат</h5>
+                  <p class="text-muted mb-3">24/7 поддержка</p>
+                  <button class="btn btn-outline-primary" onclick="openChat()">
+                    Открыть чат
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Shop</h5>
+          <p>Интернет-магазин качественных товаров</p>
+        </div>
+        <div class="col-md-6">
+          <h6>Полезные ссылки</h6>
+          <ul class="list-unstyled">
+            <li><a href="faq.html" class="text-light text-decoration-none">FAQ</a></li>
+            <li><a href="terms.html" class="text-light text-decoration-none">Пользовательское соглашение</a></li>
+            <li><a href="auth.html" class="text-light text-decoration-none">Войти в аккаунт</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p>&copy; 2024 Shop. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Initialize error page
+    document.addEventListener('DOMContentLoaded', function () {
+      // Set error time
+      document.getElementById('errorTime').textContent = new Date().toLocaleString('ru-RU');
+
+      // Generate random error ID
+      document.getElementById('errorId').textContent = generateErrorId();
+
+      // Start countdown timer
+      startRefreshTimer();
+    });
+
+    function generateErrorId() {
+      return 'ERR-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+    }
+
+    function retryRequest() {
+      // Show loading state
+      const btn = event.target;
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="bi bi-arrow-clockwise me-2 spin"></i>Обновление...';
+      btn.disabled = true;
+
+      // Simulate retry
+      setTimeout(() => {
+        // In real app, this would retry the original request
+        window.location.reload();
+      }, 2000);
+    }
+
+    function reportError() {
+      const errorId = document.getElementById('errorId').textContent;
+      const errorTime = document.getElementById('errorTime').textContent;
+      const userAgent = navigator.userAgent;
+      const url = window.location.href;
+
+      const emailBody = `
+Детали ошибки:
+- ID ошибки: ${errorId}
+- Время: ${errorTime}
+- URL: ${url}
+- Браузер: ${userAgent}
+
+Опишите, что вы делали, когда произошла ошибка:
+[Ваше описание]
+            `.trim();
+
+      const mailtoLink = `mailto:tech@shop.com?subject=Ошибка 500 - ${errorId}&body=${encodeURIComponent(emailBody)}`;
+      window.location.href = mailtoLink;
+    }
+
+    function openChat() {
+      alert('Функция чата будет доступна в ближайшее время. Пожалуйста, воспользуйтесь email или телефоном для связи.');
+    }
+
+    function startRefreshTimer() {
+      let seconds = 30;
+      const timerElement = document.getElementById('refreshTimer');
+
+      const timer = setInterval(() => {
+        seconds--;
+        timerElement.textContent = seconds;
+
+        if (seconds <= 0) {
+          clearInterval(timer);
+          window.location.reload();
+        }
+      }, 1000);
+    }
+
+    // Add spin animation for retry button
+    const style = document.createElement('style');
+    style.textContent = `
+            .spin {
+                animation: spin 1s linear infinite;
+            }
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+        `;
+    document.head.appendChild(style);
+
+    // Log 500 error for analytics (in real app)
+    console.error('500 Error - Internal server error:', window.location.href);
+  </script>
+</body>
+
+</html>
