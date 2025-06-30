@@ -171,7 +171,7 @@ function showCartNotification(productName) {
 	notification.className =
 		'alert alert-success alert-dismissible fade show position-fixed'
 	notification.style.cssText =
-		'top: 20px; right: 20px; z-index: 9999; min-width: 300px;'
+		'top: 70px; right: 20px; z-index: 9999; min-width: 300px;'
 	notification.innerHTML = `
         <i class="bi bi-check-circle me-2"></i>
         <strong>${productName}</strong> добавлен в корзину
